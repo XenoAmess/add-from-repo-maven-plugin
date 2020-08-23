@@ -43,8 +43,8 @@ public class AddTestsFromRepo extends AbstractMojo {
         tempFolder.mkdirs();
         while (!tempFolder.delete()) {
         }
-        tempFolder.mkdirs();
-
+        while (!tempFolder.mkdirs()) {
+        }
         try {
             Git.cloneRepository()
                     .setURI(repoGitUri)
