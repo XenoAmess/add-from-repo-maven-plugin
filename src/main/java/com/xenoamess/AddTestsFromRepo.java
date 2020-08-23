@@ -41,10 +41,9 @@ public class AddTestsFromRepo extends AbstractMojo {
 
         File tempFolder = new File(project.getBasedir().getAbsolutePath() + "/target/addTestsFromRepoTmp/");
         tempFolder.mkdirs();
-        while (!tempFolder.delete()) {
-        }
-        while (!tempFolder.mkdirs()) {
-        }
+        tempFolder.delete();
+        tempFolder.mkdirs();
+
         try {
             Git.cloneRepository()
                     .setURI(repoGitUri)
