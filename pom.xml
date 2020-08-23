@@ -8,8 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     <name>${project.artifactId}</name>
-    <description>maven plugin for smoking test.
-    </description>
+    <description>maven plugin for for adding other git repo's sources/tests into this repo while building.</description>
     <url>https://github.com/XenoAmess/smoke-tester-maven-plugin</url>
     <licenses>
         <license>
@@ -174,25 +173,32 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- GPG mvn clean deploy -P release -Dgpg.passphrase=YourPassphase -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
     <profiles>
+        <profile>
+            <id>ossrh</id>
+            <!-- GPG mvn clean deploy -P release -Dgpg.passphrase=YourPassphase -->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven-gpg-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>run-its</id>
             <build>
