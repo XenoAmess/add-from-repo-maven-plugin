@@ -49,7 +49,7 @@ All params and their default value are listed here.
    private String relativeDirectory;
 
    @Parameter(
-           defaultValue = "${project.build.directory}/generated-test-sources/test",
+           defaultValue = "${project.build.directory}/generated-test-sources/src/test",
            property = "outputDirectory",
            required = true
    )
