@@ -9,7 +9,7 @@
     <packaging>maven-plugin</packaging>
     <name>${project.artifactId}</name>
     <description>maven plugin for for adding other git repo's sources/tests into this repo while building.</description>
-    <url>https://github.com/XenoAmess/smoke-tester-maven-plugin</url>
+    <url>https://github.com/XenoAmess/add-from-repo-maven-plugin</url>
     <licenses>
         <license>
             <name>MIT</name>
