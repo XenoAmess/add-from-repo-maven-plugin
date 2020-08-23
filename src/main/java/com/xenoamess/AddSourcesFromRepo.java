@@ -41,7 +41,8 @@ public class AddSourcesFromRepo extends AbstractMojo {
 
         File tempFolder = new File(project.getBasedir().getAbsolutePath() + "/target/addSourcesFromRepoTmp/");
         tempFolder.mkdirs();
-        tempFolder.delete();
+        while (!tempFolder.delete()) {
+        }
         tempFolder.mkdirs();
 
         try {
@@ -62,6 +63,7 @@ public class AddSourcesFromRepo extends AbstractMojo {
             throw new MojoExecutionException("Cannot copy dirs", e);
         }
 
-        tempFolder.delete();
+        while (!tempFolder.delete()) {
+        }
     }
 }
