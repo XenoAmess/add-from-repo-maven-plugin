@@ -26,7 +26,7 @@ public class AddSourcesFromRepo extends AbstractMojo {
     private String relativeDirectory;
 
     @Parameter(
-            defaultValue = "${project.build.directory}/generated-sources/main",
+            defaultValue = "${project.build.directory}/generated-sources/src/main",
             property = "outputDirectory",
             required = true
     )

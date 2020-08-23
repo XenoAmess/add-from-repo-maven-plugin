@@ -26,7 +26,7 @@ public class AddTestsFromRepo extends AbstractMojo {
     private String relativeDirectory;
 
     @Parameter(
-            defaultValue = "${project.build.directory}/generated-test-sources/test",
+            defaultValue = "${project.build.directory}/generated-test-sources/src/test",
             property = "outputDir",
             required = true
     )
