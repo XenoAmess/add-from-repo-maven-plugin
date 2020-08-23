@@ -41,10 +41,9 @@ public class AddSourcesFromRepo extends AbstractMojo {
 
         File tempFolder = new File(project.getBasedir().getAbsolutePath() + "/target/addSourcesFromRepoTmp/");
         tempFolder.mkdirs();
-        while (!tempFolder.delete()) {
-        }
-        while (!tempFolder.mkdirs()) {
-        }
+        tempFolder.delete();
+        tempFolder.mkdirs();
+
         try {
             Git.cloneRepository()
                     .setURI(repoGitUri)
@@ -63,7 +62,6 @@ public class AddSourcesFromRepo extends AbstractMojo {
             throw new MojoExecutionException("Cannot copy dirs", e);
         }
 
-        while (!tempFolder.delete()) {
-        }
+        tempFolder.delete();
     }
 }

@@ -63,7 +63,6 @@ public class AddTestsFromRepo extends AbstractMojo {
             throw new MojoExecutionException("Cannot copy dirs", e);
         }
 
-        while (!tempFolder.delete()) {
-        }
+        tempFolder.delete();
     }
 }
