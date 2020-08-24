@@ -71,3 +71,4 @@ All params and their default value are listed here.
 
 Projects using this:
 https://github.com/XenoAmess/commonx
+https://github.com/XenoAmess/commons-crypto-smoke-test
