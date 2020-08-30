@@ -2,7 +2,7 @@
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.xenoamess/jcpp-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.xenoamess/jcpp-maven-plugin)
 
-add-from-repo-maven-plugin, A plugin for adding other git repo's sources/tests into this repo while building.
+add-from-repo-maven-plugin, a plugin for adding other git repo's sources/tests into this repo while building.
 
 ## Goal:
 
