@@ -16,8 +16,6 @@ public class AddUtil {
             String relativeDirectory,
             File outputDirectory
     ) throws MojoExecutionException {
-        project.addCompileSourceRoot(outputDirectory.getAbsolutePath());
-
         File tempFolder =
                 new File(project.getBasedir().getAbsolutePath() + "/target/addSourcesFromRepoTmp/" + UUID.randomUUID().toString());
         tempFolder.mkdirs();
