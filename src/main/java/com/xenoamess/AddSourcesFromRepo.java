@@ -35,13 +35,33 @@ public class AddSourcesFromRepo extends AbstractMojo {
     )
     private File outputDirectory;
 
+
+    @Parameter(
+            property = "relativeDirectories",
+            required = false
+    )
+    private String[] relativeDirectories;
+
+    @Parameter(
+            property = "outputDirectories",
+            required = false
+    )
+    private File[] outputDirectories;
+
     @Parameter(defaultValue = "${project}")
     private MavenProject project;
 
     @Override
     public void execute() throws MojoExecutionException {
         project.addCompileSourceRoot(outputDirectory.getAbsolutePath());
-
-        AddUtil.execute(project, repoGitUri, repoGitBranch, relativeDirectory, outputDirectory);
+        AddUtil.execute(
+                project,
+                repoGitUri,
+                repoGitBranch,
+                relativeDirectory,
+                outputDirectory,
+                relativeDirectories,
+                outputDirectories
+        );
     }
 }
