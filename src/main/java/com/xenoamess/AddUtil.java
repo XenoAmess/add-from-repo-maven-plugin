@@ -2,6 +2,9 @@ package com.xenoamess;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.UUID;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -13,6 +16,7 @@ public class AddUtil {
     public static void execute(
             MavenProject project,
             String repoGitUri,
+            String repoGitBranch,
             String relativeDirectory,
             File outputDirectory
     ) throws MojoExecutionException {
@@ -27,6 +31,7 @@ public class AddUtil {
         try {
             Git.cloneRepository()
                     .setURI(repoGitUri)
+                    .setBranch(repoGitBranch)
                     .setDirectory(tempFolder)
                     .call();
         } catch (GitAPIException e) {

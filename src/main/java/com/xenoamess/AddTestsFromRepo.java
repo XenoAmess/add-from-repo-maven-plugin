@@ -1,22 +1,25 @@
 package com.xenoamess;
 
 import java.io.File;
-import java.io.IOException;
-import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
-import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.api.errors.GitAPIException;
 
 @Mojo(name = "addTestsFromRepo", defaultPhase = LifecyclePhase.GENERATE_TEST_SOURCES)
 public class AddTestsFromRepo extends AbstractMojo {
 
     @Parameter(property = "repoGitUri", required = true)
     private String repoGitUri;
+
+    @Parameter(
+            defaultValue = "master",
+            property = "repoGitBranch",
+            required = true
+    )
+    private String repoGitBranch;
 
     @Parameter(
             defaultValue = "/src/test",
@@ -39,6 +42,6 @@ public class AddTestsFromRepo extends AbstractMojo {
     public void execute() throws MojoExecutionException {
         project.addTestCompileSourceRoot(outputDirectory.getAbsolutePath());
 
-        AddUtil.execute(project, repoGitUri, relativeDirectory, outputDirectory);
+        AddUtil.execute(project, repoGitUri, repoGitBranch, relativeDirectory, outputDirectory);
     }
 }

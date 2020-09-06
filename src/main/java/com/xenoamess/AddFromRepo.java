@@ -15,6 +15,13 @@ public class AddFromRepo extends AbstractMojo {
     private String repoGitUri;
 
     @Parameter(
+            defaultValue = "master",
+            property = "repoGitBranch",
+            required = true
+    )
+    private String repoGitBranch;
+
+    @Parameter(
             defaultValue = "",
             property = "relativeDirectory",
             required = true
@@ -33,6 +40,6 @@ public class AddFromRepo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException {
-        AddUtil.execute(project, repoGitUri, relativeDirectory, outputDirectory);
+        AddUtil.execute(project, repoGitUri, repoGitBranch, relativeDirectory, outputDirectory);
     }
 }

@@ -15,6 +15,13 @@ public class AddSourcesFromRepo extends AbstractMojo {
     private String repoGitUri;
 
     @Parameter(
+            defaultValue = "master",
+            property = "repoGitBranch",
+            required = true
+    )
+    private String repoGitBranch;
+
+    @Parameter(
             defaultValue = "/src/main",
             property = "relativeDirectory",
             required = true
@@ -35,6 +42,6 @@ public class AddSourcesFromRepo extends AbstractMojo {
     public void execute() throws MojoExecutionException {
         project.addCompileSourceRoot(outputDirectory.getAbsolutePath());
 
-        AddUtil.execute(project, repoGitUri, relativeDirectory, outputDirectory);
+        AddUtil.execute(project, repoGitUri, repoGitBranch, relativeDirectory, outputDirectory);
     }
 }
