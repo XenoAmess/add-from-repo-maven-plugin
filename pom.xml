@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.xenoamess</groupId>
     <artifactId>add-from-repo-maven-plugin</artifactId>
-    <version>0.0.8-SNAPSHOT</version>
+    <version>0.0.8</version>
     <packaging>maven-plugin</packaging>
     <name>${project.artifactId}</name>
     <description>maven plugin for for adding other git repo's sources/tests into this repo while building.</description>
