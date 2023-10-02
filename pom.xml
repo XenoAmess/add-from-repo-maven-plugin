@@ -43,7 +43,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <commons-lang3.version>3.13.0</commons-lang3.version>
-        <commons-io.version>2.13.0</commons-io.version>
+        <commons-io.version>2.14.0</commons-io.version>
         <jgit.version>5.13.2.202306221912-r</jgit.version>
     </properties>
 
