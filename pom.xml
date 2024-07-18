@@ -42,7 +42,7 @@
         <java.version>8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <commons-lang3.version>3.14.0</commons-lang3.version>
+        <commons-lang3.version>3.15.0</commons-lang3.version>
         <commons-io.version>2.15.1</commons-io.version>
         <jgit.version>5.13.3.202401111512-r</jgit.version>
     </properties>
