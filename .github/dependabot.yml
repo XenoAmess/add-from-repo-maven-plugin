@@ -25,9 +25,8 @@ updates:
     target-branch: "master"
     open-pull-requests-limit: 10
     commit-message:
-      prefix: "build(deps)"
-      prefix-development: "build(deps-dev)"
-      include: "scope"
+      prefix: "chore"
+      prefix-development: "chore"
     labels:
       - "dependencies"
       - "java"
@@ -50,13 +49,13 @@ updates:
       timezone: "Asia/Shanghai"
     target-branch: "master"
     open-pull-requests-limit: 5
-    commit-message:
-      prefix: "build(deps)"
-      include: "scope"
     labels:
       - "dependencies"
-      - "github-actions"
+      - "github_actions"
     groups:
       github-actions:
         applies-to: version-updates
         patterns: ["*"]
+
+
+
